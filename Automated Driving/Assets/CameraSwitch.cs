@@ -9,6 +9,9 @@ public class CameraSwitch : MonoBehaviour
     public GameObject FP_camera;
     public GameObject L_Headlight_camera;
     public GameObject R_Headlight_camera;
+    public GameObject R_Mirror;
+    public GameObject L_Mirror;
+    public GameObject DEFAULT_FP;
 
 
     // Use this for initialization
@@ -52,7 +55,7 @@ public class CameraSwitch : MonoBehaviour
     //Camera change Logic
     void cameraPositionChange(int camPosition)
     {
-        if (camPosition > 3)
+        if (camPosition > 6)
         {
             camPosition = 0;
         }
@@ -67,6 +70,9 @@ public class CameraSwitch : MonoBehaviour
             FP_camera.SetActive(false);
             L_Headlight_camera.SetActive(false);
             R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(false);
         }
 
         //Set camera position 2
@@ -76,6 +82,9 @@ public class CameraSwitch : MonoBehaviour
             FP_camera.SetActive(true);
             L_Headlight_camera.SetActive(false);
             R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(false);
         }
 
         //Set camera position 3
@@ -85,6 +94,9 @@ public class CameraSwitch : MonoBehaviour
             FP_camera.SetActive(false);
             L_Headlight_camera.SetActive(true);
             R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(false);
         }
 
         //Set camera position 4
@@ -94,6 +106,44 @@ public class CameraSwitch : MonoBehaviour
             FP_camera.SetActive(false);
             L_Headlight_camera.SetActive(false);
             R_Headlight_camera.SetActive(true);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(false);
+
+        }
+
+
+        if (camPosition == 4)
+        {
+            Main_camera.SetActive(false);
+            FP_camera.SetActive(false);
+            L_Headlight_camera.SetActive(false);
+            R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(true);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(false);
+        }
+
+        if (camPosition == 5)
+        {
+            Main_camera.SetActive(false);
+            FP_camera.SetActive(false);
+            L_Headlight_camera.SetActive(false);
+            R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(true);
+            DEFAULT_FP.SetActive(false);
+        }
+
+        if (camPosition == 6)
+        {
+            Main_camera.SetActive(false);
+            FP_camera.SetActive(false);
+            L_Headlight_camera.SetActive(false);
+            R_Headlight_camera.SetActive(false);
+            L_Mirror.SetActive(false);
+            R_Mirror.SetActive(false);
+            DEFAULT_FP.SetActive(true);
         }
 
     }
